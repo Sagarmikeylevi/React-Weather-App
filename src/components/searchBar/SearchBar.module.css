@@ -1,0 +1,53 @@
+.searchBarWrapper {
+    padding-top: 2%;
+    margin-left: 7.5%;
+    height: 15%;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    margin-left: 5%;
+    width: 70%;
+    background: #1b1b2e;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+
+.searchBar input {
+    padding-left: 10px;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    letter-spacing: 1px;
+    color: gray;
+    font-size: small;
+}
+
+.searchIcon {
+    padding-left: 5%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: gray;
+}
+
+.locationIcon {
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 5px;
+    background: #1b1b2e;
+    cursor: pointer;
+}
+
+.mapMarked {
+    color: gray;
+}

@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500&display=swap");
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d4d3ef;
+  height: 100vh;
+}
+
+.weather {
+  height: 30rem;
+  width: 25rem;
+  background: #00001a;
+}
