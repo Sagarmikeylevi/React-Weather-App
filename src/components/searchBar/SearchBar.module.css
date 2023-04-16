@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     
 }
 
@@ -44,10 +45,11 @@
     height: 2rem;
     width: 2rem;
     border-radius: 5px;
-    background: #1b1b2e;
+    background: #232338;
     cursor: pointer;
 }
 
 .mapMarked {
-    color: gray;
+    font-size: small;
+    color:aliceblue;
 }

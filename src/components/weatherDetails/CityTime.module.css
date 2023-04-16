@@ -1,0 +1,24 @@
+.cityTimeWrapper {
+    height: 5rem;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    /* border: 1px solid white; */
+}
+
+.cityTimeWrapper p {
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: aliceblue;
+}
+
+.cityTimeWrapper span {
+    margin-top: -0.5rem;
+    font-size: smaller;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: gray;
+}

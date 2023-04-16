@@ -12,9 +12,4 @@ code {
     monospace;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #D4D3EF;
-}
+
