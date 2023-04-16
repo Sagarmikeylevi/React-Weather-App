@@ -3,6 +3,7 @@ import Card from "./UI/Card";
 import SearchBar from "./searchBar/SearchBar";
 import CityTime from "./weatherDetails/CityTime";
 import WeatherIcon from "./weatherDetails/WeatherIcon";
+import WeatherData from "./weatherDetails/WeatherData";
 
 const Weather = () => {
   return (
@@ -10,6 +11,7 @@ const Weather = () => {
       <SearchBar />
       <CityTime />
       <WeatherIcon />
+      <WeatherData />
     </Card>
   );
 };
