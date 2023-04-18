@@ -13,4 +13,5 @@ body {
   height: 30rem;
   width: 25rem;
   background: #00001a;
+  cursor: pointer;
 }

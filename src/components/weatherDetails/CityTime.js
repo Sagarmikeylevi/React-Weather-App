@@ -1,10 +1,10 @@
 import classes from "./CityTime.module.css";
 
-const CityTime = () => {
+const CityTime = (props) => {
   return (
     <div className={classes.cityTimeWrapper}>
-      <p>San Fransisco</p>
-      <span>May 28,2021</span>
+      <p>{props.getWeatherData.cityname}</p>
+      <span>{props.getWeatherData.date}</span>
     </div>
   );
 };
