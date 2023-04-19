@@ -26,7 +26,7 @@ const SearchBar = (props) => {
           placeholder="Search"
           onChange={cityNameHandler}
           value={location}
-          onError={false}
+          
         />
       </div>
 

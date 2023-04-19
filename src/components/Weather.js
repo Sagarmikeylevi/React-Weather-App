@@ -1,3 +1,5 @@
+
+
 import classes from "./Weather.module.css";
 import Card from "./UI/Card";
 import SearchBar from "./searchBar/SearchBar";
@@ -5,20 +7,20 @@ import CityTime from "./weatherDetails/CityTime";
 import WeatherIcon from "./weatherDetails/WeatherIcon";
 import WeatherData from "./weatherDetails/WeatherData";
 import ErrorCom from "./UI/ErrorCom";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
-const Weather = (props) => {
+const Weather = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [cityName, setCityName] = useState('');
+  const [cityName, setCityName] = useState("");
   const [error, setError] = useState(null);
-  const fetchHandler =  async (city) => {
-     setError(null);
+  const apiKey = process.env.REACT_APP_API_KEY;
+
+  const fetchHandler = async (city) => {
+    setError(null);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ba3066e6ee3e65a215abb69a2fff2026`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
       );
-
-      
 
       const data = await response.json();
 
@@ -45,21 +47,19 @@ const Weather = (props) => {
         humidity: data.main.humidity,
       };
       setWeatherData(weatherDetails);
-      
     } catch (error) {
-       setError(error.message);
-       setWeatherData({});
+      setError(error.message);
+      setWeatherData({});
     }
-    
   };
 
   const cityNameHandler = (city) => {
     setCityName(city);
-  }
+  };
 
   useEffect(() => {
-    fetchHandler('Kolkata');
-  } , [])
+    fetchHandler("Kolkata");
+  }, []);
 
   return (
     <Card className={classes.weather}>
@@ -67,7 +67,7 @@ const Weather = (props) => {
         onFetch={() => fetchHandler(cityName)}
         onGetCity={cityNameHandler}
       />
-      {error && <ErrorCom message={error}  />}
+      {error && <ErrorCom message={error} />}
       {!error && <CityTime getWeatherData={weatherData} />}
       {!error && <WeatherIcon getWeatherData={weatherData} />}
       {!error && <WeatherData getWeatherData={weatherData} />}
