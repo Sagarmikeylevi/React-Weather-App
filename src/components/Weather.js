@@ -13,9 +13,11 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState({});
   const [cityName, setCityName] = useState("");
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const apiKey = process.env.REACT_APP_API_KEY;
 
   const fetchHandler = async (city) => {
+    setIsLoading(true);
     setError(null);
     try {
       const response = await fetch(
@@ -51,6 +53,7 @@ const Weather = () => {
       setError(error.message);
       setWeatherData({});
     }
+    setIsLoading(false);
   };
 
   const cityNameHandler = (city) => {
@@ -67,10 +70,11 @@ const Weather = () => {
         onFetch={() => fetchHandler(cityName)}
         onGetCity={cityNameHandler}
       />
-      {error && <ErrorCom message={error} />}
-      {!error && <CityTime getWeatherData={weatherData} />}
-      {!error && <WeatherIcon getWeatherData={weatherData} />}
-      {!error && <WeatherData getWeatherData={weatherData} />}
+      {!error && isLoading && <ErrorCom message={"...Loading"} />}
+      {error && !isLoading && <ErrorCom message={error} />}
+      {!error && !isLoading && <CityTime getWeatherData={weatherData} />}
+      {!error && !isLoading && <WeatherIcon getWeatherData={weatherData} />}
+      {!error && !isLoading && <WeatherData getWeatherData={weatherData} />}
     </Card>
   );
 };
