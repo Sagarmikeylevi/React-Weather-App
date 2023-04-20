@@ -64,17 +64,24 @@ const Weather = () => {
     fetchHandler("Kolkata");
   }, []);
 
+  if(isLoading) {
+    return (
+      <section className={classes.MealsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
   return (
     <Card className={classes.weather}>
       <SearchBar
         onFetch={() => fetchHandler(cityName)}
         onGetCity={cityNameHandler}
       />
-      {!error && isLoading && <ErrorCom message={"...Loading"} />}
-      {error && !isLoading && <ErrorCom message={error} />}
-      {!error && !isLoading && <CityTime getWeatherData={weatherData} />}
-      {!error && !isLoading && <WeatherIcon getWeatherData={weatherData} />}
-      {!error && !isLoading && <WeatherData getWeatherData={weatherData} />}
+      {error  && <ErrorCom message={error} />}
+      {!error && <CityTime getWeatherData={weatherData} />}
+      {!error && <WeatherIcon getWeatherData={weatherData} />}
+      {!error && <WeatherData getWeatherData={weatherData} />}
     </Card>
   );
 };

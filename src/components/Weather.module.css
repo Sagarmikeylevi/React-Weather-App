@@ -15,3 +15,8 @@ body {
   background: #00001a;
   cursor: pointer;
 }
+
+.MealsLoading {
+  text-align: center;
+  color: black;
+}
