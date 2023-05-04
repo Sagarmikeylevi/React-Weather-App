@@ -10,12 +10,23 @@ import ErrorCom from "./UI/ErrorCom";
 import { useEffect, useState } from "react";
 
 const Weather = () => {
+  /* weatherData will take all the needed data in an object */
   const [weatherData, setWeatherData] = useState({});
+  /* cityName is needed for frtching data  */
   const [cityName, setCityName] = useState("");
+  /* error state */
   const [error, setError] = useState(null);
+  /* loading state */
   const [isLoading, setIsLoading] = useState(false);
+  /* API Key  */
   const apiKey = process.env.REACT_APP_API_KEY;
 
+  // using useEffect for first time rendering
+  useEffect(() => {
+    fetchHandler("Kolkata");
+  }, []);
+
+  /* fetch handler: fetching the data and store it in weatherData state (obj) */
   const fetchHandler = async (city) => {
     setIsLoading(true);
     setError(null);
@@ -56,15 +67,13 @@ const Weather = () => {
     setIsLoading(false);
   };
 
+  // setting city name
   const cityNameHandler = (city) => {
     setCityName(city);
   };
 
-  useEffect(() => {
-    fetchHandler("Kolkata");
-  }, []);
-
-  if(isLoading) {
+  // loading state
+  if (isLoading) {
     return (
       <section className={classes.MealsLoading}>
         <p>Loading...</p>
@@ -78,7 +87,7 @@ const Weather = () => {
         onFetch={() => fetchHandler(cityName)}
         onGetCity={cityNameHandler}
       />
-      {error  && <ErrorCom message={error} />}
+      {error && <ErrorCom message={error} />}
       {!error && <CityTime getWeatherData={weatherData} />}
       {!error && <WeatherIcon getWeatherData={weatherData} />}
       {!error && <WeatherData getWeatherData={weatherData} />}

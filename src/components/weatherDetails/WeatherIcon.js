@@ -1,3 +1,5 @@
+// this is for weather icons 
+
 import Card from "../UI/Card";
 import classes from "./WeatherIcon.module.css";
 import Clouds from "../assets/clouds.png";

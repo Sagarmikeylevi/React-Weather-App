@@ -1,3 +1,5 @@
+// this is for showing the weather condition 
+
 import classes from './WeatherData.module.css';
 import {FaWind, FaWater, FaCloud} from 'react-icons/fa';
 const WeatherData = (props) => {
