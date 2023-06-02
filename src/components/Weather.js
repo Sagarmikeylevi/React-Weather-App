@@ -1,5 +1,4 @@
-
-
+import Loading from "./UI/Loading";
 import classes from "./Weather.module.css";
 import Card from "./UI/Card";
 import SearchBar from "./searchBar/SearchBar";
@@ -76,7 +75,7 @@ const Weather = () => {
   if (isLoading) {
     return (
       <section className={classes.MealsLoading}>
-        <p>Loading...</p>
+        <Loading />
       </section>
     );
   }
