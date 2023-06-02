@@ -30,4 +30,4 @@ To run the Weather App locally, follow these steps:
 Project already deployed on Render. Visit: https://sagarmikeylevi-weather-app.netlify.app/
 
 ## Video
-Link: https://www.youtube.com/watch?v=DfLeHKhpCuI
+Link: https://www.youtube.com/watch?v=aM9yNTWr_mo
