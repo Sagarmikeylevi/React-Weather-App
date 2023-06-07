@@ -27,7 +27,7 @@ To run the Weather App locally, follow these steps:
 - Start the application with npm start.
 
 ## Deployment
-Project already deployed on Render. Visit: https://sagarmikeylevi-weather-app.netlify.app/
+Project already deployed on Netlify. Visit: https://sagarmikeylevi-weather-app.netlify.app/
 
 ## Video
 Link: https://www.youtube.com/watch?v=aM9yNTWr_mo
