@@ -20,6 +20,8 @@ const Weather = () => {
   /* API Key  */
   const apiKey = process.env.REACT_APP_API_KEY;
 
+  /* https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} */
+
   // using useEffect for first time rendering
   useEffect(() => {
     fetchHandler("Kolkata");
